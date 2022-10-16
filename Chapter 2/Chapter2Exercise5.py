@@ -1,6 +1,3 @@
-from traceback import print_tb
-
-
 print("\nExercise 5\n")
 
 print("Narration: A girl heads to a computer shop to buy some USB sticks. \nShe loves USB sticks and wants as many as she can get for £50. They are £6 each.\n")
