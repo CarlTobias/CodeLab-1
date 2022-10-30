@@ -33,18 +33,10 @@ elif yno == "NO":
     yno = input("\nIs this information correct? ").upper()
 
     if yno == "YES":
-        print("Data is saved. Thank you for your cooperation.")
+        print("Data is saved. Thank you for your cooperation.\n")
     
-    elif yno == "NO":
-        print("Please try again.\n")
-        
-        personal_info = {"First Name": input("First Name: "),
-                         "Last Name": input("Last Name: "),
-                        "Age": input("Age: "),
-                        "City": input("City: "),
-                        "Country": input("Country: ")}
     else:
-        print("Error. Reset the program.")
+        print("Error. Please reset the program and try again\n.")
 
 else:
-    print("Error. Reset the program.")
+    print("Error. Reset the program.\n")
