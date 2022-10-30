@@ -1,14 +1,19 @@
 print("\nExercise 2\n")
 
-print("Welcome to the Metaverse Creative Computing Glossary!\n")
+print("Welcome to the Metaverse Python Programming Glossary!\n")
 
 glossary = {
-    "print": "The print() function prints the specified message to the screen, or other standard output device.",
+    "if-else": "The if-else statement is used to execute both the true part and false part of a given condition.",
     "int": "The int() function converts the specified value into an integer number.",
-    "if-else": "The if-else statement is used to execute both the true part and false part of a given condition."
+    "print": "The print() function prints the specified message to the screen, or other standard output device."
 }
 
-choice = input("What word do you want defined today? ").upper()
+print("The list of Python terms available at the moment are:\n")
+
+for terms in glossary.keys():
+    print("- " + terms)
+
+choice = input("\nWhat word do you want defined today? ").upper()
 
 if choice == "PRINT":
     print("print():\n  - " + glossary["print"])
