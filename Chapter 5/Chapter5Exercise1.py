@@ -36,7 +36,7 @@ elif yno == "NO":
         print("Data is saved. Thank you for your cooperation.\n")
     
     else:
-        print("Error. Please reset the program and try again\n.")
+        print("Please reset the program. Maximum attemps reached.\n.")
 
 else:
     print("Error. Reset the program.\n")
