@@ -1,3 +1,6 @@
+# Exercise 3:
+# Write a Python program to display the current date and time.
+
 # from here, i imported another program again, but this time i only took a specific part
 # i took the "date" part because i want to first focus on printing dates
 from datetime import date

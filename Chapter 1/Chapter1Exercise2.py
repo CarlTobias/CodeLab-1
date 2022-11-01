@@ -1,3 +1,6 @@
+# Exercise 2:
+# Write a Python program to get the Python version you are using.
+
 # right off the bat, i imported "sys" to access code that is available in a different module
 # i did this so that i don't have to worry about coding a whole list of things
 # (because it is already existing)

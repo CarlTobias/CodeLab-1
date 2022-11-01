@@ -1,3 +1,6 @@
+# Exercise 4:
+# Write three strings in different variables and print the output as one string.
+
 # i began by telling the program to print the exercise number
 print("\nExercise 4\n")
 

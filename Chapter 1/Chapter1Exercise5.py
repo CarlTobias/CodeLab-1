@@ -1,4 +1,7 @@
-# is tarted things off by importing the "math" module and specifically taking "pi"
+# Exercise 5:
+# Write a Python program which accepts the radius of a circle from the user and compute the area.
+
+# i started things off by importing the "math" module and specifically taking "pi"
 from math import pi
 
 # as usual, i told the program to print the exercise number before anything else

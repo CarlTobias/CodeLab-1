@@ -1,3 +1,12 @@
+# Exercise 1:
+# Write a Python program to print the following string in a specific format.
+
+# Twinkle, twinkle, little star,
+# How I wonder what you are! Up above the world so high,
+# Like a diamond in the sky.
+# Twinkle, twinkle, little star,
+# How I wonder what you are
+
 # first, i defined a class style for color
 class style:
     # as you can see here, i used the ANSI codes
