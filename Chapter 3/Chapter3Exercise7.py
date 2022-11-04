@@ -38,18 +38,12 @@ print("I would like to go to these places:" +
 # next, i sorted the list using the "sorted()" function,
 # but i moved that to a variable named "sortedtravel" so that i don't actually modify the list
 # to prove that, i printed the list with concatenated text
-sortedtravel = sorted(travel)
-print("I would like to go to these places:" +
-      "\n- " + travel[0] + "\n- " + travel[1] + "\n- " +
-      travel[2] +  "\n- " + travel[3] + "\n- " + travel[4] + "\n")
+print(sorted(travel))
 
 # here, i did essentially the same thing, but instead of sorting alphabetically,
 # i did it in reverse alphabetical order... and again, i did this without reversing the original list
 # and to prove that, i printed the list again with concatenated text
-rsortedtravel = sorted(travel, reverse=True)
-print("I would like to go to these places:" +
-      "\n- " + travel[0] + "\n- " + travel[1] + "\n- " +
-      travel[2] + "\n- " + travel[3] + "\n- " + travel[4] + "\n")
+print(str(sorted(travel, reverse=True)) + "\n")
 
 # here, i used the "reverse()" function to reverse the actual list
 #i then printed the list once more with concatenated text (to prove that the command worked)
