@@ -26,9 +26,9 @@ menumenuprice = {"A1" : 2.50, "A2" : 2.50, "A3" : 2.50, "A4" : 3.50,
                  "H1" : 3.50, "H2" : 2.00, "H3" : 2.00, "H4" : 1.50,
                  "I1" : 3.15, "I2" : 5.00, "I3" : 2.50, "I4" : 4.00}
 
-food = {"A1" : ["Lay's (Original)", "AED 2.50"], "A2" : ["Lay's (Tomato Ketchup)", "AED 2.50"], "A3" : ["Lay's (Salt & Vinegar)", "AED 2.50"], "A4" : ["Forno (Authentic Cheese)", "AED 3.50"], 
-        "B1" : ["Pringles (Original)", "AED 4.50"], "B2" : ["Pringles (Sour Cream & Onion)", "AED 4.50"], "B3" : ["Stix (Slightly Salted)", "AED 3.00"], "B4" : ["Stix (Tomato Ketchup)", "AED 3.00"], 
-        "C1" : ["L'uisine (Plain Croissant)", "AED 1.00"], "C2" : ["L'uisine (Cheese Croissant)", "AED 1.50"], "C3" : ["L'uisine (Cheese Puff)", "AED 2.50"], "C4" : ["7Days (Chocolate Croissant)", "AED 1.00"]}
+food = {f"{bold}A1{normal}" : ["Lay's (Original)", "AED 2.50"], f"{bold}A2{normal}" : ["Lay's (Tomato Ketchup)", "AED 2.50"], f"{bold}A3{normal}" : ["Lay's (Salt & Vinegar)", "AED 2.50"], f"{bold}A4{normal}" : ["Forno (Authentic Cheese)", "AED 3.50"], 
+        f"{bold}B1{normal}" : ["Pringles (Original)", "AED 4.50"], f"{bold}B2{normal}" : ["Pringles (Sour Cream & Onion)", "AED 4.50"], f"{bold}B3{normal}" : ["Stix (Slightly Salted)", "AED 3.00"], f"{bold}B4{normal}" : ["Stix (Tomato Ketchup)", "AED 3.00"], 
+        f"{bold}C1{normal}" : ["L'uisine (Plain Croissant)", "AED 1.00"], f"{bold}C2{normal}" : ["L'uisine (Cheese Croissant)", "AED 1.50"], f"{bold}C3{normal}" : ["L'uisine (Cheese Puff)", "AED 2.50"], f"{bold}C4{normal}" : ["7Days (Chocolate Croissant)", "AED 1.00"]}
 
 foodprice = {"A1" : 2.50, "A2" : 2.50, "A3" : 2.50, "A4" : 3.50,
              "B1" : 4.50, "B2" : 4.50, "B3" : 3.00, "B4" : 3.00,
@@ -36,27 +36,27 @@ foodprice = {"A1" : 2.50, "A2" : 2.50, "A3" : 2.50, "A4" : 3.50,
 # this variable is where i will be keeping the money input of the user to keep track of their purchases,
 # to keep them informed of the credit left, and to be able to calculate the change later on near the end
 
-drinks = {"D1" : ["Coca Cola", "AED 2.50"], "D2" : ["Coca Cola (Light)", "AED 2.00"], "D3" : ["Pepsi", "AED 2.50"], "D4" : ["Pepsi (Diet)", "AED 2.00"],
-          "E1" : ["Sprite", "AED 2.50"], "E2" : ["Fanta", "AED 2.50"], "E3" : ["Water (Mai Dubai)", "AED 1.50"], "E4" : ["Water (Al Ain)", "AED 1.50"],
-          "F1" : ["Capri-Sun (Apple)", "AED 2.20"], "F2" : ["Capri-Sun (Orange)", "AED 2.20"], "F3" : ["Capri-Sun (Strawberry)", "AED 2.20"], "F4" : ["Capri-Sun (Tropical)", "AED 2.20"]}
+drinks = {f"{bold}D1{normal}" : ["Coca Cola", "AED 2.50"], f"{bold}D2{normal}" : ["Coca Cola (Light)", "AED 2.00"], f"{bold}D3{normal}" : ["Pepsi", "AED 2.50"], f"{bold}D4{normal}" : ["Pepsi (Diet)", "AED 2.00"],
+          f"{bold}E1{normal}" : ["Sprite", "AED 2.50"], f"{bold}E2{normal}" : ["Fanta", "AED 2.50"], f"{bold}E3{normal}" : ["Water (Mai Dubai)", "AED 1.50"], f"{bold}E4{normal}" : ["Water (Al Ain)", "AED 1.50"],
+          f"{bold}F1{normal}" : ["Capri-Sun (Apple)", "AED 2.20"], f"{bold}F2{normal}" : ["Capri-Sun (Orange)", "AED 2.20"], f"{bold}F3{normal}" : ["Capri-Sun (Strawberry)", "AED 2.20"], f"{bold}F4{normal}" : ["Capri-Sun (Tropical)", "AED 2.20"]}
 
 drinksprice = {"D1" : 2.50, "D2" : 2.00, "D3" : 2.50, "D4" : 2.00,
                "E1" : 2.50, "E2" : 2.50, "E3" : 1.50, "E4" : 1.50,
                "F1" : 2.20, "F2" : 2.20, "F3" : 2.20, "F4" : 2.20}
 
 
-extras = {"G1" : ["Baskin Robbins 120ml (Vanilla)", "AED 6.40"], "G2" : ["Baskin Robbins 120ml (Chocolate)", "AED 6.40"], "G3" : ["Baskin Robbins 120ml (Praline Delight)", "AED 6.40"], "G4" : ["Baskin Robbins 120ml (Cotton Candy)", "AED 6.40"],
-          "H1" : ["Chocolate Chip Brownie", "AED 3.50"], "H2" : ["Oreos", "AED 2.00"], "H3" : ["Oreos (Golden)", "AED 2.00"], "H4" : ["Choco Cookies", "AED 1.50"], 
-          "I1" : ["Chocapic", "AED 3.15"], "I2" : ["Cinnamon Toast Crunch", "AED 5.00"], "I3" : ["Lacnor (Skimmed Milk 150ml)", "AED 2.50"], "I4" : ["Alpro (Almond Milk 150ml)", "AED 4.00"]}
+extras = {f"{bold}G1{normal}" : ["Baskin Robbins 120ml (Vanilla)", "AED 6.40"], f"{bold}G2{normal}" : ["Baskin Robbins 120ml (Chocolate)", "AED 6.40"], f"{bold}G3{normal}" : ["Baskin Robbins 120ml (Praline Delight)", "AED 6.40"], f"{bold}G4{normal}" : ["Baskin Robbins 120ml (Cotton Candy)", "AED 6.40"],
+          f"{bold}H1{normal}" : ["Chocolate Chip Brownie", "AED 3.50"], f"{bold}H2{normal}" : ["Oreos", "AED 2.00"], f"{bold}H3{normal}" : ["Oreos (Golden)", "AED 2.00"], f"{bold}H4{normal}" : ["Choco Cookies", "AED 1.50"], 
+          f"{bold}I1{normal}" : ["Chocapic", "AED 3.15"], f"{bold}I2{normal}" : ["Cinnamon Toast Crunch", "AED 5.00"], f"{bold}I3{normal}" : ["Lacnor (Skimmed Milk 150ml)", "AED 2.50"], f"{bold}I4{normal}" : ["Alpro (Almond Milk 150ml)", "AED 4.00"]}
 
 extrasprice = {"G1" : 6.40, "G2" : 6.40, "G3" : 6.40, "G4" : 6.40,
                "H1" : 3.50, "H2" : 2.00, "H3" : 2.00, "H4" : 1.50,
                "I1" : 3.15, "I2" : 5.00, "I3" : 2.50, "I4" : 4.00}
 
-combos = {"Breakfast Club - BC1" : ["Cinnamon Toast Crunch & Lacnor Skimmed Milk", "AED 7.50"], "Breakfast Club (Lactose Free) - BC2" : ["Cinnamon Toast Crunch & Alpro Almond Milk", "AED 9.00"],
-          "Lay's Lover - CH1" : ["All Lay's Flavours (Excluding Forno) & Any Drink of Your Choice", "AED 7.50 + Drink"], "Pringles Heaven - CH2" : ["All Pringle Flavours & Any Drink of Your Choice", "AED 9.00 + Drink"],
-          "Snack Pack 1 - AI1" : ["Forno (Authentic Cheese), Stix (Slightly Salted), & Water (Mai Dubai)", "AED 8.00"], "Snack Pack 2 - AI2" : ["Lay's (Original), Pringles (Original), & Water (Mai Dubai)", "AED 8.50"],
-          "Brain Freeze 1 - BF1" : ["Baskin Robbins (Chocolate) & Oreos", "AED 8.40"], "Brain Freeze 2 - BF2" : ["Baskin Robbins (Vanilla) & Cinnamon Toast Crunch", "AED 11.40"]}
+combos = {f"Breakfast Club - {bold}BC1{normal}" : ["Cinnamon Toast Crunch & Lacnor Skimmed Milk", "AED 7.50"], f"Breakfast Club (Lactose Free) - {bold}BC2{normal}" : ["Cinnamon Toast Crunch & Alpro Almond Milk", "AED 9.00"],
+          f"Lay's Lover - {bold}CH1{normal}" : ["All Lay's Flavours (Excluding Forno) & Any Drink of Your Choice", "AED 7.50 + Drink"], f"Pringles Heaven - {bold}CH2{normal}" : ["All Pringle Flavours & Any Drink of Your Choice", "AED 9.00 + Drink"],
+          f"Snack Pack 1 - {bold}AI1{normal}" : ["Forno (Authentic Cheese), Stix (Slightly Salted), & Water (Mai Dubai)", "AED 8.00"], f"Snack Pack 2 - {bold}AI2{normal}" : ["Lay's (Original), Pringles (Original), & Water (Mai Dubai)", "AED 8.50"],
+          f"Brain Freeze 1 - {bold}BF1{normal}" : ["Baskin Robbins (Chocolate) & Oreos", "AED 8.40"], f"Brain Freeze 2 - {bold}BF2{normal}" : ["Baskin Robbins (Vanilla) & Cinnamon Toast Crunch", "AED 11.40"]}
 
 combosprice = {"BC1" : 7.50, "BC2" : 9.00,
                "CH1" : 7.50, "CH2" : 9.00,
@@ -122,7 +122,7 @@ totalprice = 0
 print(f"\n{bold}Welcome to Vendimus Prime!{normal}\n\n")
 
 # and the menu is immediately printed
-print("Menu:\n")
+print(f"{bold}Menu:{normal}\n")
 menu()
 
 print("\n\nDo you want to purchase one of our combos for a quick purchase?")
