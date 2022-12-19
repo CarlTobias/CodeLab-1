@@ -28,12 +28,12 @@ print(list)
 
 # sixth, we remove elements anywhere in the list in a slightly different way
 
-listed.remove("delta")
+listed.remove("charlie")
 print(list)
 
 # seventh, we remove elements from anywhere in the list in an even more slightly different way
 
-del listed[3]
+del listed[2]
 print(listed)
 
 # eighth, we delete the whole list in its entirety
@@ -80,7 +80,7 @@ print("Zero Dimentional Array: ", arr)
 
 # here, a 1 dimentional array
 
-arr1 = np.array(10, 20, 30, 40 ,50)
+arr1 = np.array([10, 20, 30, 40 ,50])
 print("One Dimentional Array: ", arr1)
 
 # here, a 2 dimentional array

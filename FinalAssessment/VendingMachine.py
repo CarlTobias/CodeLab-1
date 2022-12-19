@@ -473,4 +473,4 @@ while True:
 
 # if purchase is over 20 dhs give a free item from the machine
 
-# im so tired lol
+# im so tired loll
