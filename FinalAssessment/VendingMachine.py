@@ -81,11 +81,14 @@ def menu():
     print("Extras:")
     for GnHnI, one2four3 in extras.items():
         print(str(GnHnI) + " - " + str(one2four3))
-
+        
+def enterAorB():
+    input("Enter 'A' for Yes or 'B' for No: ").upper()
+    
 def isthatright():
     while True:
                     print("Is that right?")
-                    right = input("Enter 'Y' or 'N': ").upper()
+                    right = enterAorB()
                 
                     if right == "Y":
                         print("\nOkay. Moving on.\n")
@@ -99,17 +102,19 @@ def isthatright():
                         menu()
                         
                         print("\nWhat would you like to add?")
-                        print("If none, enter 'N'\n")
+                        print("If none, enter 'B'\n")
                         add = input("Enter a code: ").upper()
                         
                         if add in menumenu:
                             print(f"You chose {menumenu[add][0]}\n")
                             
                             print("Is that right?")
-                            right = input("Enter 'Y' or 'N': ").upper()
+                            right = enterAorB()
                             if right == "Y":
                                 totalprice += add
                                 break
+
+
 
 totalprice = 0
 
@@ -121,210 +126,207 @@ print("Menu:\n")
 menu()
 
 print("\n\nDo you want to purchase one of our combos for a quick purchase?")
-quickies = input("Enter 'Y' or 'N': ").upper()
+quickies = input(f"Enter '{bold}A{normal}' for Yes or '{bold}B{normal}' for No: ").upper()
 
-if quickies == "Y":
+if quickies == "A":
     print("Combos:\n")
     for com, bos in combos.items():
         print(str(com) + " - " + str(bos))
     
-    print("What combo would you like to purchase?")
-    print("If none, enter 'N'\n")
-    comboinput = input("Please enter the corresponding code for the combo: ").upper()
-    
     run = True
-    
     while run:
-        print("What combo would you like to purchase?")
-        print("If none, enter 'N'\n")
+        print("\n\nWhat combo would you like to purchase?")
+        print(f"If none, enter '{bold}B{normal}'\n")
         comboinput = input("Please enter the corresponding code for the combo: ").upper()
+        # when you press b... it goes straight to the end, so fix it to where it will be going to the individual purchase process
     
-        if comboinput in combos:
-            print(f"You chose {combos[comboinput][0]}\n")
+        if comboinput == "B":
+            print("Okay.\n")
+            break #idk what to put yet (maybe just say okay and end the prog or go straight to the individual purchases)
         
-            print("Is that right?")
-            right = input("Enter 'Y' or 'N': ").upper()
-        
-            if right == "Y":
-                print("\nOkay. Moving on.\n")
-                totalprice += combosprice[comboinput]
+        elif comboinput in combosprice:
+            run2 = True
+            while run:
+                print(f"You chose {comboinput}.\n")
+                print("Is that right?")
+                right = enterAorB()
                 
-            
-            elif not right == "Y" or not right == "N":
-                print("Invalid input. Try Again.\n")
-            
-            else:
-                print("Combos:\n")
-                for com, bos in combos.items():
-                    print(str(com) + " - " + str(bos))
-                
-                print("\nWhat would you like to purchase for snacks?")
-                print("If none, enter 'N'\n")
-                comboinput = input("Enter a code: ").upper()
-                
-                if comboinput in quickies:
-                    print(f"You chose {combos[comboinput][0]}\n")
+                if right == "A":
+                    print("\nGreat!\n")
+                    totalprice += combosprice[comboinput]
                     
-                    print("Is that right?")
-                    right = input("Enter 'Y' or 'N': ").upper()
-                    if right == "Y":
-                        totalprice += combos[comboinput][1]
-            run = False
+                
+                elif not right == "A" or not right == "B":
+                    print("Invalid input. Try Again.\n")
+                
+                else:
+                    print("Combos:\n")
+                    for com, bos in combos.items():
+                        print(str(com) + " - " + str(bos))
+            run2 = False
         
         else:
             print("Invalid input. Please try again.\n")
-
-print("Would you like to add something else?")
-anyother = input("Enter 'Y' or 'N': ").upper()
+        run = False
     
-if anyother == "Y":
-    menu()
+          
+        print("Would you like to add something else?")
+        anyother = enterAorB()
         
-    print("What would you like to add?")
-    add = input("Please enter a code: ")
-        
-    while True:
-        if add in menumenu:
-            print(f"You chose {menumenu[add][0]}\n")
-            isthatright()
+        if anyother == "A":
+            menu()
                 
-        break
-        
-    print("Anything else?")
-    anyotherother = input("Enter 'Y' or 'N': ").upper()
-        
-    if anyotherother == "Y":
-        menu()
+            print("What would you like to add?")
+            add = input("Please enter a code: ")
             
-        print("What would you like to add?")
-        add = input("Please enter a code: ")
-            
-        while True:
-            if add in menumenu:
-                print(f"You chose {menumenu[add][0]}\n")
-                isthatright()
-                    
-            break        
-        
-
-elif quickies == "N":
-    print("\nWhat would you like to purchase for snacks?")
-    print("If none, enter 'N'\n")
-    choose1 = input("Enter a code: ").upper()
-
-    while True:
-        if choose1 in food:
-            print(f"You chose {food[choose1][0]}\n")
-        
-        
-        while True:
-            print("Is that right?")
-            right = input("Enter 'Y' or 'N': ").upper()
-        
-            if right == "Y":
-                print("\nOkay. Moving on.\n")
+            run = True    
+            while run:
+                if add in menumenu:
+                    print(f"You chose {menumenu[add][0]}\n")
+                    isthatright()
+                        
                 break
             
-            elif not right == "Y":
-                print("Invalid input. Try Again.\n")
+        print("Anything else?")
+        anyotherother = enterAorB()
             
-            else:
-                print("Snacks:")
-                for AnBnC, one2four1 in food.items():
-                    print(str(AnBnC) + " - " + str(one2four1))
+        if anyotherother == "Y":
+            menu()
                 
-                print("\nWhat would you like to purchase for snacks?")
-                print("If none, enter 'N'\n")
-                choose1 = input("Enter a code: ").upper()
+            print("What would you like to add?")
+            add = input("Please enter a code: ")
                 
-                if choose1 in food:
-                    print(f"You chose {food[choose1][0]}\n")
+            while True:
+                if add in menumenu:
+                    print(f"You chose {menumenu[add][0]}\n")
+                    isthatright()
+                        
+                break        
+            
+
+elif quickies == "B":
+    print("Snacks:")
+    for AnBnC, one2four1 in food.items():
+        print(str(AnBnC) + " - " + str(one2four1))
+        
+    run = True
+    while run:
+        print("\n\nWhat would you like to purchase for snacks?")
+        print(f"If none, enter '{bold}B{normal}'\n")
+        choose1 = input("Enter a code: ").upper()
+    
+        if choose1 == "B":
+            print("Okay.\n")
+            break #idk what to put yet (maybe just say okay and end the prog or go straight to the individual purchases)
+        
+        elif choose1 in food:
+            run2 = True
+            while run2:
+                print(f"You chose {bold}{choose1}{normal}.\n")
+                print("Is that right?")
+                right = enterAorB()
+                
+                if right == "A":
+                    print("\nGreat!\n")
+                    totalprice += foodprice[choose1]
                     
-                    print("Is that right?")
-                    right = input("Enter 'Y' or 'N': ").upper()
-                    if right == "Y":
-                        break
-        break
-        
-
-
-    print("\nWhat would you like to purchase for drinks?")
-    print("If none, enter 'N'\n")
-    choose2 = input("Enter a code: ").upper()
-
-    while True:
-        if choose2 in drinks:
-            print(f"You chose {drinks[choose2][0]}\n")
-        
-        
-        while True:
-            print("Is that right?")
-            right = input("Enter 'Y' or 'N': ").upper()
-        
-            if right == "Y":
-                print("\nOkay. Moving on.\n")
-                break
-            
-            elif not right == "Y":
-                print("Invalid input. Try Again.\n")
-            
-            else:
-                print("Snacks:")
-                for DnEnF, one2four2 in drinks.items():
-                    print(str(DnEnF) + " - " + str(one2four2))
+                # this is currently infinite... fix this
+                elif not right == "A" or not right == "B":
+                    print("Invalid input. Try Again.\n")
                 
-                print("\nWhat would you like to purchase for snacks?")
-                print("If none, enter 'N'\n")
-                choose2 = input("Enter a code: ").upper()
+                else:
+                    print("Snacks:")
+                    for AnBnC, one2four1 in food.items():
+                        print(str(AnBnC) + " - " + str(one2four1))
+            run2 = False
+        
+        else:
+            print("Invalid input. Please try again.\n")
+        run = False
+    
+    
+    
+    print("Drinks:")
+    for DnEnF, one2four2 in drinks.items():
+        print(str(DnEnF) + " - " + str(one2four2))
+        
+    run3 = True
+    while run3:
+        print("\n\nWhat would you like to purchase for drinks?")
+        print(f"If none, enter '{bold}B{normal}'\n")
+        choose2 = input("Enter a code: ").upper()
+    
+        if choose2 == "B":
+            print("Okay.\n")
+            break #idk what to put yet (maybe just say okay and end the prog or go straight to the individual purchases)
+        
+        elif choose2 in food:
+            run4 = True
+            while run4:
+                print(f"You chose {bold}{choose1}{normal}.\n")
+                print("Is that right?")
+                right = enterAorB()
                 
-                if choose2 in drinks:
-                    print(f"You chose {drinks[choose2][0]}\n")
+                if right == "A":
+                    print("\nGreat!\n")
+                    totalprice += foodprice[choose1]
                     
-                    print("Is that right?")
-                    right = input("Enter 'Y' or 'N': ").upper()
-                    if right == "Y":
-                        break
-        break
-
-
-
-    print("\nWhat would you like to purchase anything extra?")
-    print("If none, enter 'N'\n")
-    choose3 = input("Please enter a code: ").upper()
-
-    while True:
-        if choose3 in extras:
-            print(f"You chose {extras[choose3][0]}\n")
+                # this is currently infinite... fix this
+                elif not right == "A" or not right == "B":
+                    print("Invalid input. Try Again.\n")
+                
+                else:
+                    print("Drinks:")
+                    for DnEnF, one2four2 in drinks.items():
+                        print(str(DnEnF) + " - " + str(one2four2))
+            run4 = False
         
+        else:
+            print("Invalid input. Please try again.\n")
+        run3 = False
+    
+    
+    
+    print("Extras:")
+    for GnHnI, one2four3 in extras.items():
+        print(str(GnHnI) + " - " + str(one2four3))
         
-        while True:
-            print("Is that right?")
-            right = input("Enter 'Y' or 'N': ").upper()
+    run5 = True
+    while run5:
+        print("\n\nWhat would you like to purchase any extras?")
+        print(f"If none, enter '{bold}B{normal}'\n")
+        choose2 = input("Enter a code: ").upper()
+    
+        if choose2 == "B":
+            print("Okay.\n")
+            break #idk what to put yet (maybe just say okay and end the prog or go straight to the individual purchases)
         
-            if right == "Y":
-                print("\nOkay. Moving on.\n")
-                break
-            
-            elif not right == "Y":
-                print("Invalid input. Try Again.\n")
-            
-            else:
-                print("Extra:")
+        elif choose2 in food:
+            run6 = True
+            while run6:
+                print(f"You chose {bold}{choose1}{normal}.\n")
+                print("Is that right?")
+                right = enterAorB()
+                
+                if right == "A":
+                    print("\nGreat!\n")
+                    totalprice += foodprice[choose1]
+                    
+                # this is currently infinite... fix this
+                elif not right == "A" or not right == "B":
+                    print("Invalid input. Try Again.\n")
+                
+                print("Extras:")
                 for GnHnI, one2four3 in extras.items():
                     print(str(GnHnI) + " - " + str(one2four3))
-                
-                print("\nWhat would you like to purchase for snacks?")
-                print("If none, enter 'N'\n")
-                choose3 = input("Please enter a code: ").upper()
-                
-                if choose3 in extras:
-                    print(f"You chose {extras[choose3][0]}\n")
-                    
-                    print("Is that right?")
-                    right = input("Enter 'Y' or 'N': ").upper()
-                    if right == "Y":
-                        break
-        break
+            run6 = False
+        
+        else:
+            print("Invalid input. Please try again.\n")
+        run5 = False
+
+
+
 
 print("Thank you for using Vendimus Prime!\n")
     
@@ -349,7 +351,7 @@ while True:
     # this is the code the program follows when the criteria is met
         if money >= 3:
             print(f"\nGreat! You inserted a total of {totalmoney} correct?")
-            correct = input("Enter 'Y' or 'N': ")
+            correct = enterAorB()
             
             if correct == "Y":
                 break
