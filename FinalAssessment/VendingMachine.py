@@ -192,33 +192,48 @@ if quickies == "A":
             print("Invalid input. Please try again.\n")
         run = False
     
-        # CONTINUE COMMENTING LATER HEKHEK  
+        # after the if-else statement, the program would then move on to the next part
+        # i made it so that the program would ask if the user would want anything else to add to the combo
+        # (to make it more user-friendly)
         print("Would you like to add something else?")
+        # once again, i used my function to input a choice
         anyother = enterAorB()
         
+        # and another if-else statement to define what block of code to do
         if anyother == "A":
+            # if "A," then the program will print the whole menu using the user definied function earlier
             menu()
-                
+            
+            # and asks the user what they would like to add    
             print("What would you like to add?")
             add = input("Please enter a code: ")
             
+            # after the input... i added another while loop that takes care of the vending process
             run = True    
             while run:
+                # inside the while loop, there's an if-else statement
                 if add in menumenu:
+                    # if the user-input is inside the dictionary "menumenu," then it will execute the following
                     print(f"You chose {menumenu[add][0]}\n")
                     isthatright()
-                        
+                # then break the loop        
                 break
-            
+        # then i made it ask the user for anything else    
         print("Anything else?")
         anyotherother = enterAorB()
+        
+        # i used another if-else statement for the decision    
+        if anyotherother == "A":
+            # if input is equal to "A," the following code will be followed:
             
-        if anyotherother == "Y":
+            # the menu is printed again
             menu()
-                
+            
+            # and then it asks for the item the user would like to add
             print("What would you like to add?")
             add = input("Please enter a code: ")
-                
+            
+            # it will then enable this while loop that is similar to the previous loop
             while True:
                 if add in menumenu:
                     print(f"You chose {menumenu[add][0]}\n")
@@ -227,48 +242,62 @@ if quickies == "A":
                 break        
             
 
+# now, if the user wants to purchase individual items, they would have to enter "B" (according to this elif statement)
 elif quickies == "B":
+    # inside, the menu for just "snacks" is printed using a for loop
     print("Snacks:")
     for AnBnC, one2four1 in food.items():
         print(str(AnBnC) + " - " + str(one2four1))
-        
+    
+    # after that, a while loop is used yet again    
     run = True
     while run:
+        # in the loop. the program will ask for what snacks the user wants
         print("\n\nWhat would you like to purchase for snacks?")
         print(f"If none, enter '{bold}B{normal}'\n")
         choose1 = input("Enter a code: ").upper()
-    
+
+        # and this if-else statement is used for the user input above
         if choose1 == "B":
+            # if the user enters "B," the program will proceed to print the following
             print("Okay.\n")
+            # and break the loop
             break #idk what to put yet (maybe just say okay and end the prog or go straight to the individual purchases)
         
-        elif choose1 in food:
+        # and if the input is inside the dictionary for the snacks
+        elif choose1 in foodprice:
             run2 = True
             while run2:
+                # now, like the other previous while loops, this acts as a failsafe to make a more user-friendly program
+                # it asks the user if their initial input is correct
                 print(f"You chose {bold}{choose1}{normal}.\n")
                 print("Is that right?")
                 right = enterAorB()
                 
                 if right == "A":
+                    # if it is, then the program will say "Great!" and add the price to their total bill
                     print("\nGreat!\n")
                     totalprice += foodprice[choose1]
                     
                 # this is currently infinite... fix this
                 elif not right == "A" or not right == "B":
+                    # if the input is neither "A" or "B," then the program will print the following:
                     print("Invalid input. Try Again.\n")
                 
                 else:
+                    # and if the input is anything other than the two branches on top, then the program will print the following:
                     print("Snacks:")
                     for AnBnC, one2four1 in food.items():
                         print(str(AnBnC) + " - " + str(one2four1))
             run2 = False
         
+        # and this else statement prints invalid input, so that the user will have the opportunity to input the correct code
         else:
             print("Invalid input. Please try again.\n")
         run = False
     
     
-    
+    # this next part is the exact same code block as the one above, but is made for the "drinks" section
     print("Drinks:")
     for DnEnF, one2four2 in drinks.items():
         print(str(DnEnF) + " - " + str(one2four2))
@@ -309,7 +338,7 @@ elif quickies == "B":
         run3 = False
     
     
-    
+    # and this next part is the exact same code block again, but is made for the "extras" section
     print("Extras:")
     for GnHnI, one2four3 in extras.items():
         print(str(GnHnI) + " - " + str(one2four3))
@@ -350,10 +379,12 @@ elif quickies == "B":
 
 
 
-
+# finally, the program will thank the user for using the program
 print("Thank you for using Vendimus Prime!\n")
-    
+
+# and shows the user's total bill    
 print(f"Your total is {totalprice}.")
+# it tells the user to insert money to receive the items ordered
 print("\nTo purchase, please insert money.\n")
 
 # these three lines inform the user of the useable bills and coins,
@@ -361,33 +392,48 @@ print("\nTo purchase, please insert money.\n")
 print(f"The available bills are {bold}5{normal}, {bold}10{normal}, {bold}20{normal}, and {bold}50{normal}")
 print("All coins are accepted.\n")
 print(f"The minimum amount is {bold}AED 3{normal}")
-        
+
+# now this variable is where the user can input their money to pay        
 money = (float(input("\nPlease insert here: ")))
+# it will be added to a variable named totalmoney
 totalmoney =+ money
 
+# now... i added a totalmoney variable to allow the user to input smaller bills
+# with this, the user can install money one by one until the amount of money added is greater than or equal to the bill
+
+# this while loop takes care of that
 while money < totalprice:
+    # firist, it prints the following and asks the user to input more money
     print(f"Almost there! Just AED {totalprice - money} left.")
     money = (float(input("\nPlease insert here: ")))
     totalmoney =+ money
-    
+
+# once that loop is finished, another loop is started 
 while True:
-    # this is the code the program follows when the criteria is met
-        if money >= 3:
+    # when the criteria is met, the block of code will run
+        if money >= totalprice:
+            # thee will be another failsafe that asks if the total money inserted is correct
             print(f"\nGreat! You inserted a total of {totalmoney} correct?")
             correct = enterAorB()
             
+            # if it is...
             if correct == "Y":
+                # the loop breaks and it proceeds to the final part of the program
                 break
             
+            # otherwise...
             else:
+                # the program will print the required bills again and asks the user to input money
                 print(f"The available bills are {bold}5{normal}, {bold}10{normal}, {bold}20{normal}, and {bold}50{normal}")
                 print("All coins are accepted.\n")
                 print(f"The minimum amount is {bold}AED 3{normal}")
 
                 money = (float(input("\nPlease insert here: ")))
+                # here we use the "totalmoney" variable i defined earlier to be able to add up all the money together
                 totalmoney =+ money
-
-                while money < totalprice:
+                
+                # and this while loop is active when money inputted is less than the bill
+                while totalmoney < totalprice:
                     print(f"Almost there! Just AED {totalprice - money} left.")
                     money = (float(input("\nPlease insert here: ")))
                     totalmoney =+ money
@@ -406,96 +452,53 @@ while True:
             money = (float(input("\nPlease insert here: ")))
             totalmoney =+ money
             
+            # and i put the same loop as earlier
             while money < totalprice:
                 print(f"Almost there! Just AED {totalprice - money} left.")
                 money = (float(input("\nPlease insert here: ")))
                 totalmoney =+ money
 
+# the final part of the program starts here
+# first, i made a formula to calculate the change
 change = totalprice - totalmoney
 
+# now, if change is 0, the user will not receive change
 if change <= 0:
+    # instead, the user will eceive this message
     print("You have no change.\n")
     print("Come again soon. Thank you!\n")
 
+# if the user has change that isn't 0.25, 0.50, or 0.75, then the program will follow this block
 elif change <= 0.24 or change > 0.49 <= 0.26 or change > 0.74 <= 0.51 or change > 0.99 <= 0.76:
+    # the user will still have no change because it is impossible to give change for it
     print("You have no change.\n")
     print("Come again soon. Thank you!\n")
 
+# otherwise, the user will be getting the message below
 else:
+    # the total change will be shown
     print(f"Your change is AED {change}\n")
     
+    # then the program will ask if the user would like to receive it or to donate it to charity
     print("Would you like to take it or donate it to charity?")
     keepthechange = input("Enter 'A' for change and 'B' to donate: ").upper()
     
     while True:
+        # if the user would like to receive, then this will be followed
         if keepthechange == "A":
             print("Dispensing change.\n")
             print("Come again soon. Thank you!\n")
             break
         
-        elif not keepthechange == "Y" or not keepthechange == "N":
+        # if the input is not "A" nor "B," then this will be followed
+        elif not keepthechange == "A" or not keepthechange == "B":
             print("Invalid input. Please try again.")
         
+        # if the user decides to donate for charity,
         else:
+            # the user will be informed and the money will be stored for charity
             print("Alright! The rest of your change will be donated to charity.\n")
             print("Come again soon. Thank You!\n")
             break
     
-    
-    
-    
-
-    
-print("\nTo purchase, please insert credit.\n")
-
-# these three lines inform the user of the useable bills and coins,
-# and it also informs the user that the minimum amount to be able to purchase anything is 3 dhs
-print(f"The available bills are {bold}5{normal}, {bold}10{normal}, {bold}20{normal}, and {bold}50{normal}")
-print("All coins are accepted.\n")
-print(f"The minimum amount is {bold}AED 3{normal}")
-
-# here i put an input function where the user will give money
-money = (float(input("\nPlease insert here: ")))
-# and here, i made it so that the money inputted will be added to the credit variable
-credit =+ money
-
-# here i added a (sort of) infinite while loop that asks the user over and over again until a specific amount (3 dhs) is met
-while True:
-    # this is the code the program follows when the criteria is met
-    if money >= 3:
-        print(f"\nGreat! Your current balance is now: {credit}\n")
-        break
-    
-    # this is what is followed if credit is too low
-    elif money < 3 >= 0.25:
-        print(f"\n{bold}Amount too low to purchase.{normal}")
-        print("Please insert more credit.\n")
-        
-        print(f"The available bills are {bold}5{normal}, {bold}10{normal}, {bold}20{normal}, and {bold}50{normal}")
-        print("All coins are accepted.\n")
-        print(f"The minimum amount is {bold}AED 3{normal}")
-
-        money2 = (float(input("\nPlease insert credit here: ")))
-        # and the money inputted here will be added to the original money variable
-        # to be totalled for the credit
-        money =+ money2
-        # the same thing happens here
-        credit = money
-    
-    # and this is what is followed when the money inserted is invalid    
-    else:
-        # and i had the program ask the user again for money input
-        print(f"\n{bold}Invalid bill/s or coin/s.{normal}")
-        print("Please try again.\n")
-        
-        print(f"The available bills are {bold}5{normal}, {bold}10{normal}, {bold}20{normal}, and {bold}50{normal}")
-        print("All coins are accepted.\n")
-        print(f"The minimum amount is {bold}AED 3{normal}")
-
-        money2 = (float(input("\nPlease insert here: ")))
-        # the same thing is done here
-
-
 # if purchase is over 20 dhs give a free item from the machine
-
-# im so tired loll
