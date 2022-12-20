@@ -6,6 +6,8 @@ bold = "\33[1m"
 normal = "\33[m"
 
 # then, i start by creating a dictionary with all the items i want the vending machine to vend
+
+# here i made a list of all the items (for ease on later codes)
 menumenu = {"A1" : ["Lay's (Original)", "AED 2.50"], "A2" : ["Lay's (Tomato Ketchup)", "AED 2.50"], "A3" : ["Lay's (Salt & Vinegar)", "AED 2.50"], "A4" : ["Forno (Authentic Cheese)", "AED 3.50"],
             "B1" : ["Pringles (Original)", "AED 4.50"], "B2" : ["Pringles (Sour Cream & Onion)", "AED 4.50"], "B3" : ["Stix (Slightly Salted)", "AED 3.00"], "B4" : ["Stix (Tomato Ketchup)", "AED 3.00"],
             "C1" : ["L'uisine (Plain Croissant)", "AED 1.00"], "C2" : ["L'uisine (Cheese Croissant)", "AED 1.50"], "C3" : ["L'uisine (Cheese Puff)", "AED 2.50"], "C4" : ["7Days (Chocolate Croissant)", "AED 1.00"],
@@ -16,6 +18,7 @@ menumenu = {"A1" : ["Lay's (Original)", "AED 2.50"], "A2" : ["Lay's (Tomato Ketc
             "H1" : ["Chocolate Chip Brownie", "AED 3.50"], "H2" : ["Oreos", "AED 2.00"], "H3" : ["Oreos (Golden)", "AED 2.00"], "H4" : ["Choco Cookies", "AED 1.50"],
             "I1" : ["Chocapic", "AED 3.15"], "I2" : ["Cinnamon Toast Crunch", "AED 5.00"], "I3" : ["Lacnor (Skimmed Milk 150ml)", "AED 2.50"], "I4" : ["Alpro (Almond Milk 150ml)", "AED 4.00"]}
 
+# and here i made another dictionary of the same thing as the one above, but this time it's the code and price
 menumenuprice = {"A1" : 2.50, "A2" : 2.50, "A3" : 2.50, "A4" : 3.50,
                  "B1" : 4.50, "B2" : 4.50, "B3" : 3.00, "B4" : 3.00,
                  "C1" : 1.00, "C2" : 1.50, "C3" : 2.50, "C4" : 1.00,
@@ -26,16 +29,17 @@ menumenuprice = {"A1" : 2.50, "A2" : 2.50, "A3" : 2.50, "A4" : 3.50,
                  "H1" : 3.50, "H2" : 2.00, "H3" : 2.00, "H4" : 1.50,
                  "I1" : 3.15, "I2" : 5.00, "I3" : 2.50, "I4" : 4.00}
 
+# this dictionary is only for the snacks
 food = {f"{bold}A1{normal}" : ["Lay's (Original)", "AED 2.50"], f"{bold}A2{normal}" : ["Lay's (Tomato Ketchup)", "AED 2.50"], f"{bold}A3{normal}" : ["Lay's (Salt & Vinegar)", "AED 2.50"], f"{bold}A4{normal}" : ["Forno (Authentic Cheese)", "AED 3.50"], 
         f"{bold}B1{normal}" : ["Pringles (Original)", "AED 4.50"], f"{bold}B2{normal}" : ["Pringles (Sour Cream & Onion)", "AED 4.50"], f"{bold}B3{normal}" : ["Stix (Slightly Salted)", "AED 3.00"], f"{bold}B4{normal}" : ["Stix (Tomato Ketchup)", "AED 3.00"], 
         f"{bold}C1{normal}" : ["L'uisine (Plain Croissant)", "AED 1.00"], f"{bold}C2{normal}" : ["L'uisine (Cheese Croissant)", "AED 1.50"], f"{bold}C3{normal}" : ["L'uisine (Cheese Puff)", "AED 2.50"], f"{bold}C4{normal}" : ["7Days (Chocolate Croissant)", "AED 1.00"]}
 
+# and again, like the other one, this dictionary is where i will be keeping the price to be able to calculate it later on
 foodprice = {"A1" : 2.50, "A2" : 2.50, "A3" : 2.50, "A4" : 3.50,
              "B1" : 4.50, "B2" : 4.50, "B3" : 3.00, "B4" : 3.00,
              "C1" : 1.00, "C2" : 1.50, "C3" : 2.50, "C4" : 1.00}
-# this variable is where i will be keeping the money input of the user to keep track of their purchases,
-# to keep them informed of the credit left, and to be able to calculate the change later on near the end
 
+# this is for drinks
 drinks = {f"{bold}D1{normal}" : ["Coca Cola", "AED 2.50"], f"{bold}D2{normal}" : ["Coca Cola (Light)", "AED 2.00"], f"{bold}D3{normal}" : ["Pepsi", "AED 2.50"], f"{bold}D4{normal}" : ["Pepsi (Diet)", "AED 2.00"],
           f"{bold}E1{normal}" : ["Sprite", "AED 2.50"], f"{bold}E2{normal}" : ["Fanta", "AED 2.50"], f"{bold}E3{normal}" : ["Water (Mai Dubai)", "AED 1.50"], f"{bold}E4{normal}" : ["Water (Al Ain)", "AED 1.50"],
           f"{bold}F1{normal}" : ["Capri-Sun (Apple)", "AED 2.20"], f"{bold}F2{normal}" : ["Capri-Sun (Orange)", "AED 2.20"], f"{bold}F3{normal}" : ["Capri-Sun (Strawberry)", "AED 2.20"], f"{bold}F4{normal}" : ["Capri-Sun (Tropical)", "AED 2.20"]}
@@ -44,7 +48,7 @@ drinksprice = {"D1" : 2.50, "D2" : 2.00, "D3" : 2.50, "D4" : 2.00,
                "E1" : 2.50, "E2" : 2.50, "E3" : 1.50, "E4" : 1.50,
                "F1" : 2.20, "F2" : 2.20, "F3" : 2.20, "F4" : 2.20}
 
-
+# this is for extras like dessert
 extras = {f"{bold}G1{normal}" : ["Baskin Robbins 120ml (Vanilla)", "AED 6.40"], f"{bold}G2{normal}" : ["Baskin Robbins 120ml (Chocolate)", "AED 6.40"], f"{bold}G3{normal}" : ["Baskin Robbins 120ml (Praline Delight)", "AED 6.40"], f"{bold}G4{normal}" : ["Baskin Robbins 120ml (Cotton Candy)", "AED 6.40"],
           f"{bold}H1{normal}" : ["Chocolate Chip Brownie", "AED 3.50"], f"{bold}H2{normal}" : ["Oreos", "AED 2.00"], f"{bold}H3{normal}" : ["Oreos (Golden)", "AED 2.00"], f"{bold}H4{normal}" : ["Choco Cookies", "AED 1.50"], 
           f"{bold}I1{normal}" : ["Chocapic", "AED 3.15"], f"{bold}I2{normal}" : ["Cinnamon Toast Crunch", "AED 5.00"], f"{bold}I3{normal}" : ["Lacnor (Skimmed Milk 150ml)", "AED 2.50"], f"{bold}I4{normal}" : ["Alpro (Almond Milk 150ml)", "AED 4.00"]}
@@ -53,6 +57,8 @@ extrasprice = {"G1" : 6.40, "G2" : 6.40, "G3" : 6.40, "G4" : 6.40,
                "H1" : 3.50, "H2" : 2.00, "H3" : 2.00, "H4" : 1.50,
                "I1" : 3.15, "I2" : 5.00, "I3" : 2.50, "I4" : 4.00}
 
+# and finally, we have a dictionary for combos
+# i made this to give the user a chance to make a quicker purchase
 combos = {f"Breakfast Club - {bold}BC1{normal}" : ["Cinnamon Toast Crunch & Lacnor Skimmed Milk", "AED 7.50"], f"Breakfast Club (Lactose Free) - {bold}BC2{normal}" : ["Cinnamon Toast Crunch & Alpro Almond Milk", "AED 9.00"],
           f"Lay's Lover - {bold}CH1{normal}" : ["All Lay's Flavours (Excluding Forno) & Any Drink of Your Choice", "AED 7.50 + Drink"], f"Pringles Heaven - {bold}CH2{normal}" : ["All Pringle Flavours & Any Drink of Your Choice", "AED 9.00 + Drink"],
           f"Snack Pack 1 - {bold}AI1{normal}" : ["Forno (Authentic Cheese), Stix (Slightly Salted), & Water (Mai Dubai)", "AED 8.00"], f"Snack Pack 2 - {bold}AI2{normal}" : ["Lay's (Original), Pringles (Original), & Water (Mai Dubai)", "AED 8.50"],
@@ -81,10 +87,13 @@ def menu():
     print("Extras:")
     for GnHnI, one2four3 in extras.items():
         print(str(GnHnI) + " - " + str(one2four3))
-        
+
+# i made this function so that i dont have to keep repeating input        
 def enterAorB():
     input("Enter 'A' for Yes or 'B' for No: ").upper()
-    
+
+# this function is made to ask the user if their input is correct
+# i found myself having to repeat this code a lot, so i made a function to make the code length shorter    
 def isthatright():
     while True:
                     print("Is that right?")
@@ -115,7 +124,7 @@ def isthatright():
                                 break
 
 
-
+# here, i defined a variable for the final price
 totalprice = 0
 
 # here is a welcoming line
@@ -125,51 +134,65 @@ print(f"\n{bold}Welcome to Vendimus Prime!{normal}\n\n")
 print(f"{bold}Menu:{normal}\n")
 menu()
 
+# i told the program to ask the user first if they wanted to buy a combo for a faster purchase
 print("\n\nDo you want to purchase one of our combos for a quick purchase?")
+# here i put input for their choice
 quickies = input(f"Enter '{bold}A{normal}' for Yes or '{bold}B{normal}' for No: ").upper()
 
+# this if-else statement makes the choice on which block of code to run
+
 if quickies == "A":
+    # if the user inputs "A," then the program will print the list of the combos
     print("Combos:\n")
     for com, bos in combos.items():
         print(str(com) + " - " + str(bos))
     
+    # and after that, i made a while statement that asks for another input for the ccombo code
     run = True
     while run:
         print("\n\nWhat combo would you like to purchase?")
         print(f"If none, enter '{bold}B{normal}'\n")
         comboinput = input("Please enter the corresponding code for the combo: ").upper()
         # when you press b... it goes straight to the end, so fix it to where it will be going to the individual purchase process
-    
+
+        # inside the while loop, there is another if-else statement
         if comboinput == "B":
+            # if the user inputs "B," the program will end break the while loop and continue the program
             print("Okay.\n")
             break #idk what to put yet (maybe just say okay and end the prog or go straight to the individual purchases)
         
         elif comboinput in combosprice:
+            # otherwise, it will ask the user again just to make sure that they are satisfied with their input
             run2 = True
             while run:
                 print(f"You chose {comboinput}.\n")
                 print("Is that right?")
+                # i used the defined function i made earlier
                 right = enterAorB()
                 
                 if right == "A":
+                    # if the input is "A," program will follow the following:
                     print("\nGreat!\n")
                     totalprice += combosprice[comboinput]
                     
-                
+                # if the input is neither "A" nor "B," the program will print "Invalid input" and it will repeat the loop 
                 elif not right == "A" or not right == "B":
                     print("Invalid input. Try Again.\n")
                 
+                # otherwise, the program will print the combo menu once again, and the loop will continue
                 else:
                     print("Combos:\n")
                     for com, bos in combos.items():
                         print(str(com) + " - " + str(bos))
             run2 = False
         
+        # if the input is anything else other than "B" or anything in the combo list,
+        # the program will print "Invalid input" and it will repeat the loop
         else:
             print("Invalid input. Please try again.\n")
         run = False
     
-          
+        # CONTINUE COMMENTING LATER HEKHEK  
         print("Would you like to add something else?")
         anyother = enterAorB()
         
