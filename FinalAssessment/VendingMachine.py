@@ -242,12 +242,12 @@ elif quickies == "B":
 
         # and this if-else statement is used for the user input above
         if choose1 == "B":
-            # if the user enters "B," the program will proceed to print the following
+            # if the user enters "B," the program will proceed to print the following:
             print("Okay.\n")
             # and break the loop
-            break #idk what to put yet (maybe just say okay and end the prog or go straight to the individual purchases)
+            break
         
-        # and if the input is inside the dictionary for the snacks
+        # and if the input is inside the dictionary for the snacks, this block will run
         elif choose1 in foodprice:
             run2 = True
             while run2:
@@ -261,28 +261,31 @@ elif quickies == "B":
                     # if it is, then the program will say "Great!" and add the price to their total bill
                     print("\nGreat!\n")
                     totalprice += foodprice[choose1]
-                    
-                # this is currently infinite... fix this
-                elif not right == "A" or not right == "B":
-                    # if the input is neither "A" or "B," then the program will print the following:
-                    print("Invalid input. Try Again.\n")
+                    run = False
+                    run2 = False
                 
-                else:
+                elif right == "B":
                     # and if the input is anything other than the two branches on top, then the program will print the following:
                     print("Snacks:")
                     for AnBnC, one2four1 in food.items():
                         print(str(AnBnC) + " - " + str(one2four1))
-            run2 = False
+                    run2 = False
+                    
+                else:
+                    # if the input is neither "A" or "B," then the program will print the following:
+                    print("Invalid input. Try Again.\n")
+                    # and it will run the while loop again
+
         
         # and this else statement prints invalid input, so that the user will have the opportunity to input the correct code
         else:
             print("Invalid input. Please try again.\n")
-        run = False
+
     
     
     # this next part is the exact same code block as the one above, but is made for the "drinks" section
     print("Drinks:")
-    for DnEnF, one2four2 in drinks.items():
+    for DnEnF, one2four2 in food.items():
         print(str(DnEnF) + " - " + str(one2four2))
         
     run3 = True
@@ -290,35 +293,36 @@ elif quickies == "B":
         print("\n\nWhat would you like to purchase for drinks?")
         print(f"If none, enter '{bold}B{normal}'\n")
         choose2 = input("Enter a code: ").upper()
-    
+
         if choose2 == "B":
             print("Okay.\n")
-            break #idk what to put yet (maybe just say okay and end the prog or go straight to the individual purchases)
-        
-        elif choose2 in food:
+            break
+
+        elif choose2 in drinksprice:
             run4 = True
             while run4:
-                print(f"You chose {bold}{choose1}{normal}.\n")
+                print(f"You chose {bold}{choose2}{normal}.\n")
                 print("Is that right?")
                 right = input("Enter 'A' for Yes or 'B' for No: ").upper()
                 
                 if right == "A":
                     print("\nGreat!\n")
-                    totalprice += foodprice[choose1]
-                    
-                # this is currently infinite... fix this
-                elif not right == "A" or not right == "B":
-                    print("Invalid input. Try Again.\n")
+                    totalprice += drinksprice[choose2]
+                    run3 = False
+                    run4 = False
                 
-                else:
+                elif right == "B":
                     print("Drinks:")
-                    for DnEnF, one2four2 in drinks.items():
+                    for DnEnF, one2four2 in food.items():
                         print(str(DnEnF) + " - " + str(one2four2))
-            run4 = False
-        
+                    run4 = False
+                    
+                else:
+                    print("Invalid input. Try Again.\n")
+
         else:
             print("Invalid input. Please try again.\n")
-        run3 = False
+    
     
     
     # and this next part is the exact same code block again, but is made for the "extras" section
@@ -330,35 +334,36 @@ elif quickies == "B":
     while run5:
         print("\n\nWhat would you like to purchase any extras?")
         print(f"If none, enter '{bold}B{normal}'\n")
-        choose2 = input("Enter a code: ").upper()
+        choose3 = input("Enter a code: ").upper()
     
-        if choose2 == "B":
+        if choose3 == "B":
             print("Okay.\n")
-            break #idk what to put yet (maybe just say okay and end the prog or go straight to the individual purchases)
+            break
         
-        elif choose2 in food:
+        elif choose3 in extrasprice:
             run6 = True
             while run6:
-                print(f"You chose {bold}{choose1}{normal}.\n")
+                print(f"You chose {bold}{choose3}{normal}.\n")
                 print("Is that right?")
                 right = input("Enter 'A' for Yes or 'B' for No: ").upper()
                 
                 if right == "A":
                     print("\nGreat!\n")
-                    totalprice += foodprice[choose1]
+                    totalprice += extrasprice[choose3]
+                    run5 = False
+                    run6 = False
                     
-                # this is currently infinite... fix this
-                elif not right == "A" or not right == "B":
-                    print("Invalid input. Try Again.\n")
+                elif right == "B":
+                    print("Extras:")
+                    for GnHnI, one2four3 in extras.items():
+                        print(str(GnHnI) + " - " + str(one2four3))
+                    run6 = False
                 
-                print("Extras:")
-                for GnHnI, one2four3 in extras.items():
-                    print(str(GnHnI) + " - " + str(one2four3))
-            run6 = False
+                else:
+                    print("Invalid input. Try Again.\n")
         
         else:
             print("Invalid input. Please try again.\n")
-        run5 = False
 
 
 
@@ -399,7 +404,7 @@ while money < totalprice:
 # once that loop is finished, another loop is started 
 while True:
     # when the criteria is met, the block of code will run
-        if money >= totalprice:
+        if totalmoney >= totalprice:
             print(f"\nGreat! You inserted a total of {totalmoney}.")
             break
         
@@ -417,15 +422,62 @@ while True:
             totalmoney += money
             
             # and i put the same loop as earlier
-            while money < totalprice:
+            while totalmoney < totalprice:
                 print(f"Almost there! Just AED {totalprice - money} left.")
                 money = (float(input("\nPlease insert here: ")))
                 totalmoney += money
         break
+    
+if totalprice > 20:
+    print(f"ongratulations! You've made a purchase higher than {bold}AED 20{normal}.")
+    print("Because of that, please choose any additional item from 'Extras'")
+    print(f"{bold}Free of charge!{normal}")
+    
+    print("Extras:")
+    for GnHnI, one2four3 in extras.items():
+        print(str(GnHnI) + " - " + str(one2four3))
+    
+    run7 = True
+    while run7:
+        print("\n\nPLease pick an extra item.")
+        print(f"If none, enter '{bold}B{normal}'\n")
+        choose4 = input("Enter a code: ").upper()
+    
+        if choose4 == "B":
+            print("Okay.\n")
+            break
+        
+        elif choose4 in extrasprice:
+            run8 = True
+            while run8:
+                print(f"You chose {bold}{choose4}{normal}.\n")
+                print("Is that right?")
+                right = input("Enter 'A' for Yes or 'B' for No: ").upper()
+                
+                if right == "A":
+                    print("\nGreat!\n")
+                    totalprice += extrasprice[choose4]
+                    run7 = False
+                    run8 = False
+                    
+                elif right == "B":
+                    print("Extras:")
+                    for GnHnI, one2four3 in extras.items():
+                        print(str(GnHnI) + " - " + str(one2four3))
+                    run8 = False
+                
+                else:
+                    print("Invalid input. Try Again.\n")
+        
+        else:
+            print("Invalid input. Please try again.\n")
+    
+        
+print("\nVending...\n")
 
 # the final part of the program starts here
 # first, i made a formula to calculate the change
-change = totalprice - totalmoney
+change =  totalmoney - totalprice
 
 # now, if change is 0, the user will not receive change
 if change <= 0:
@@ -466,4 +518,6 @@ else:
             print("Come again soon. Thank You!\n")
             break
     
-# if purchase is over 20 dhs give a free item from the machine
+
+    
+    
