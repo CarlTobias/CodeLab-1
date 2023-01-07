@@ -74,17 +74,17 @@ combosprice = {"BC1" : 7.50, "BC2" : 9.00,
 
 # this one is for printing the menu
 def menu():
-    print("Snacks:")
+    print(f"{bold}Snacks:{normal}")
     for AnBnC, one2four1 in food.items():
         print(str(AnBnC) + " - " + str(one2four1))
 
     print("\n")
-    print("Drinks:")
+    print(f"{bold}Drinks:{normal}")
     for DnEnF, one2four2 in drinks.items():
         print(str(DnEnF) + " - " + str(one2four2))
 
     print("\n")
-    print("Extras:")
+    print(f"{bold}Extras:{normal}")
     for GnHnI, one2four3 in extras.items():
         print(str(GnHnI) + " - " + str(one2four3))
 
@@ -228,7 +228,8 @@ if quickies == "A":
 # now, if the user wants to purchase individual items, they would have to enter "B" (according to this elif statement)
 elif quickies == "B":
     # inside, the menu for just "snacks" is printed using a for loop
-    print("Snacks:")
+    print("\n\n\n\n\nO-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O\n\n\n\n\n")
+    print(f"{bold}Snacks:{normal}")
     for AnBnC, one2four1 in food.items():
         print(str(AnBnC) + " - " + str(one2four1))
     
@@ -259,14 +260,14 @@ elif quickies == "B":
                 
                 if right == "A":
                     # if it is, then the program will say "Great!" and add the price to their total bill
-                    print("\nGreat!\n")
+                    print(f"\n{bold}Great!{normal}\n")
                     totalprice += foodprice[choose1]
                     run = False
                     run2 = False
                 
                 elif right == "B":
                     # and if the input is anything other than the two branches on top, then the program will print the following:
-                    print("Snacks:")
+                    print(f"{bold}Snacks:{normal}")
                     for AnBnC, one2four1 in food.items():
                         print(str(AnBnC) + " - " + str(one2four1))
                     run2 = False
@@ -280,12 +281,12 @@ elif quickies == "B":
         # and this else statement prints invalid input, so that the user will have the opportunity to input the correct code
         else:
             print("Invalid input. Please try again.\n")
-
+    
     
     
     # this next part is the exact same code block as the one above, but is made for the "drinks" section
-    print("Drinks:")
-    for DnEnF, one2four2 in food.items():
+    print(f"{bold}Drinks:{normal}")
+    for DnEnF, one2four2 in drinks.items():
         print(str(DnEnF) + " - " + str(one2four2))
         
     run3 = True
@@ -306,13 +307,13 @@ elif quickies == "B":
                 right = input("Enter 'A' for Yes or 'B' for No: ").upper()
                 
                 if right == "A":
-                    print("\nGreat!\n")
+                    print(f"\n{bold}Great!{normal}\n")
                     totalprice += drinksprice[choose2]
                     run3 = False
                     run4 = False
                 
                 elif right == "B":
-                    print("Drinks:")
+                    print(f"{bold}Drinks:{normal}")
                     for DnEnF, one2four2 in food.items():
                         print(str(DnEnF) + " - " + str(one2four2))
                     run4 = False
@@ -326,7 +327,7 @@ elif quickies == "B":
     
     
     # and this next part is the exact same code block again, but is made for the "extras" section
-    print("Extras:")
+    print(f"{bold}Extras:{normal}")
     for GnHnI, one2four3 in extras.items():
         print(str(GnHnI) + " - " + str(one2four3))
         
@@ -348,13 +349,13 @@ elif quickies == "B":
                 right = input("Enter 'A' for Yes or 'B' for No: ").upper()
                 
                 if right == "A":
-                    print("\nGreat!\n")
+                    print(f"\n{bold}Great!{normal}\n")
                     totalprice += extrasprice[choose3]
                     run5 = False
                     run6 = False
                     
                 elif right == "B":
-                    print("Extras:")
+                    print(f"{bold}Extras:{normal}")
                     for GnHnI, one2four3 in extras.items():
                         print(str(GnHnI) + " - " + str(one2four3))
                     run6 = False
@@ -366,12 +367,13 @@ elif quickies == "B":
             print("Invalid input. Please try again.\n")
 
 
+print("\n\n\n\n\nO-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O-O\n\n\n\n\n")
 
 # finally, the program will thank the user for using the program
 print("Thank you for using Vendimus Prime!\n")
 
 # and shows the user's total bill    
-print(f"Your total is {totalprice}.")
+print(f"Your total is {bold}AED {totalprice}{normal}.")
 # it tells the user to insert money to receive the items ordered
 print("\nTo purchase, please insert money.\n")
 
@@ -393,19 +395,19 @@ totalmoney += money
 # this while loop takes care of that
 while money < totalprice:
     # first, it prints the following and asks the user to input more money
-    print(f"Almost there! Just AED {totalprice - totalmoney} left.")
+    print(f"Almost there! Just {bold}AED {totalprice - totalmoney}{normal} left.")
     money = (float(input("\nPlease insert here: ")))
     totalmoney += money
     
     if totalmoney >= totalprice:
-        print(f"\nGreat! You inserted a total of {totalmoney}.")
+        print(f"\nGreat! You inserted a total of {bold}AED {totalmoney}{normal}.")
         break
 
 # once that loop is finished, another loop is started 
 while True:
     # when the criteria is met, the block of code will run
         if totalmoney >= totalprice:
-            print(f"\nGreat! You inserted a total of {totalmoney}.")
+            print(f"\nGreat! You inserted a total of {bold}AED {totalmoney}{normal}.")
             break
         
         # and this is what is followed when the money inserted is invalid    
@@ -429,11 +431,11 @@ while True:
         break
     
 if totalprice > 20:
-    print(f"ongratulations! You've made a purchase higher than {bold}AED 20{normal}.")
+    print(f"Congratulations! You've made a purchase higher than {bold}AED 20{normal}.")
     print("Because of that, please choose any additional item from 'Extras'")
     print(f"{bold}Free of charge!{normal}")
     
-    print("Extras:")
+    print(f"{bold}Extras:{normal}")
     for GnHnI, one2four3 in extras.items():
         print(str(GnHnI) + " - " + str(one2four3))
     
@@ -494,7 +496,7 @@ elif change <= 0.24 or change > 0.49 <= 0.26 or change > 0.74 <= 0.51 or change 
 # otherwise, the user will be getting the message below
 else:
     # the total change will be shown
-    print(f"Your change is AED {change}\n")
+    print(f"Your change is {bold}AED {change}{normal}\n")
     
     # then the program will ask if the user would like to receive it or to donate it to charity
     print("Would you like to take it or donate it to charity?")
@@ -507,17 +509,54 @@ else:
             print("Come again soon. Thank you!\n")
             break
         
-        # if the input is not "A" nor "B," then this will be followed
-        elif not keepthechange == "A" or not keepthechange == "B":
-            print("Invalid input. Please try again.")
-        
         # if the user decides to donate for charity,
-        else:
-            # the user will be informed and the money will be stored for charity
-            print("Alright! The rest of your change will be donated to charity.\n")
+        # the user will be informed and the money will be stored for charity
+        elif keepthechange == "B":
+            print("\nAlright! The rest of your change will be donated to charity.\n")
             print("Come again soon. Thank You!\n")
+            break
+        
+        else:
+            # if the input is not "A" nor "B," then this will be followed
+            print("Invalid input. Please try again.")
             break
     
 
     
-    
+    #run2_1 = True
+    #while run2_1:
+        #print("Would you like something else to add?")
+        #toadd = input("Enter 'A' for Yes or 'B' for No: ").upper()
+        
+        #if toadd == "A":
+            #print("\n\nWhat would you like to purchase for snacks?")
+            #print(f"If none, enter '{bold}B{normal}'\n")
+            #wwtb = input("Enter a code: ").upper()
+            
+            #run2_1 = True
+            #while run2_1:
+                #print(f"You chose {bold}{choose1}{normal}.\n")
+                #print("Is that right?")
+                #right = input("Enter 'A' for Yes or 'B' for No: ").upper()
+                
+                #if right == "A":
+                    #print(f"\n{bold}Great!{normal}\n")
+                    #totalprice += foodprice[choose1]
+                    #run = False
+                    #run2 = False
+                
+                #elif right == "B":
+                    #print(f"{bold}Snacks:{normal}")
+                    #for AnBnC, one2four1 in food.items():
+                        #print(str(AnBnC) + " - " + str(one2four1))
+                    #run2 = False
+                    
+                #else:
+                    #print("Invalid input. Try Again.\n")
+        
+        #elif toadd == "B":
+            #print(f"{bold}Alright!{normal}\n")
+            #run2 = False
+        
+        #else:
+            #print("Invalid input. Please try again.\n")    
