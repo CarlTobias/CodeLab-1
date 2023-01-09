@@ -312,7 +312,43 @@ elif quickies == "B":
         else:
             print("Invalid input. Please try again.\n")
     
-    
+        run2_1 = True
+        while run2_1:
+            print("Would you like something else to add?")
+            toadd = input("Enter 'A' for Yes or 'B' for No: ").upper()
+            
+            if toadd == "A":
+                print("\n\nWhat would you like to purchase for snacks?")
+                print(f"If none, enter '{bold}B{normal}'\n")
+                wwtb = input("Enter a code: ").upper()
+                
+                run2_2 = True
+                while run2_2:
+                    print(f"You chose {bold}{choose1}{normal}.\n")
+                    print("Is that right?")
+                    right = input("Enter 'A' for Yes or 'B' for No: ").upper()
+                    
+                    if right == "A":
+                        print(f"\n{bold}Great!{normal}\n")
+                        totalprice += foodprice[choose1]
+                        run2_1 = False
+                        run2_2 = False
+                    
+                    elif right == "B":
+                        print(f"{bold}Snacks:{normal}")
+                        for AnBnC, one2four1 in food.items():
+                            print(str(AnBnC) + " - " + str(one2four1))
+                        run2_2 = False
+                        
+                    else:
+                        print("Invalid input. Try Again.\n")
+            
+            elif toadd == "B":
+                print(f"{bold}Alright!{normal}\n")
+                run2_1 = False
+            
+            else:
+                print("Invalid input. Please try again.\n")
     
     # this next part is the exact same code block as the one above, but is made for the "drinks" section
     print(f"{bold}Drinks:{normal}")
@@ -578,43 +614,7 @@ else:
             # if the input is not "A" nor "B," then this will be followed
             print("\nInvalid input. Please try again.\n")
             break
-    
 
-    
-    #run2_1 = True
-    #while run2_1:
-        #print("Would you like something else to add?")
-        #toadd = input("Enter 'A' for Yes or 'B' for No: ").upper()
-        
-        #if toadd == "A":
-            #print("\n\nWhat would you like to purchase for snacks?")
-            #print(f"If none, enter '{bold}B{normal}'\n")
-            #wwtb = input("Enter a code: ").upper()
-            
-            #run2_2 = True
-            #while run2_1:
-                #print(f"You chose {bold}{choose1}{normal}.\n")
-                #print("Is that right?")
-                #right = input("Enter 'A' for Yes or 'B' for No: ").upper()
-                
-                #if right == "A":
-                    #print(f"\n{bold}Great!{normal}\n")
-                    #totalprice += foodprice[choose1]
-                    #run_1 = False
-                    #run2_2 = False
-                
-                #elif right == "B":
-                    #print(f"{bold}Snacks:{normal}")
-                    #for AnBnC, one2four1 in food.items():
-                        #print(str(AnBnC) + " - " + str(one2four1))
-                    #run2_2 = False
-                    
-                #else:
-                    #print("Invalid input. Try Again.\n")
-        
-        #elif toadd == "B":
-            #print(f"{bold}Alright!{normal}\n")
-            #run2_1 = False
-        
-        #else:
-            #print("Invalid input. Please try again.\n")    
+
+
+# finally finished ahhhhh!!!!!  
